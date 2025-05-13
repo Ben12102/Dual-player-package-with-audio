@@ -46,9 +46,12 @@
  {
    "title" : "Enable Audio",
    "name": "enable_audio",
-   "type": "bool",
-   "default": true
-
+   "type": "select",
+  "default": "yes",
+  "options": [
+    { "title": "Yes", "value": "yes" },
+    { "title": "No", "value": "no" }
+  ]
  }
 
 ]
