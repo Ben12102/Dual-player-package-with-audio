@@ -46,7 +46,7 @@
  {
    "title" : "Enable Audio",
    "name": "enable_audio",
-   "type": "toggle",
+   "type": "bool",
    "default": true
 
  }
