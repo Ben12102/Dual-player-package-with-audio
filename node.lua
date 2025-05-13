@@ -156,7 +156,7 @@ local playlist_2 = Scheduler()
 util.json_watch("config.json", function(config)
     playlist_1.update(config.playlist_1)
     playlist_2.update(config.playlist_2)
-    enable_audio = config.enable_audio ~= false -- default to true if missing
+    enable_audio = (config.enable_audio == "yes")
 end)
 
 local runner_1 = Runner(playlist_1, {

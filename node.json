@@ -48,7 +48,10 @@
    "name": "enable_audio",
    "type": "select",
   "default": "yes",
-  "options": ["yes", "no"]
+  "options": [
+  ["yes", "Enable Audio"],
+  ["no", "Disable Audio"]
+]
   
  }
 
