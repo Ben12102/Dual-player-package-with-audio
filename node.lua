@@ -2,6 +2,8 @@ gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 
 util.no_globals()
 
+local enable_audio = true -- fallback default
+
 local function image(file, duration)
     local img, ends
     return {
@@ -32,7 +34,7 @@ local function video(file, duration)
                 file = file,
                 paused = true,
                 raw = true,
-                audio = true,
+                audio = enable_audio,
             }
         end;
         start = function()
@@ -154,6 +156,7 @@ local playlist_2 = Scheduler()
 util.json_watch("config.json", function(config)
     playlist_1.update(config.playlist_1)
     playlist_2.update(config.playlist_2)
+    enable_audio = config.enable_audio ~= false -- default to true if missing
 end)
 
 local runner_1 = Runner(playlist_1, {
